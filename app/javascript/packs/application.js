@@ -14,4 +14,3 @@ ActiveStorage.start()
 
 require("trix")
 require("@rails/actiontext")
-import 'bulma/css/bulma.css'
