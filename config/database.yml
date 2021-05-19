@@ -6,8 +6,12 @@ default: &default
 
 development:
   <<: *default
-  database: portal_solar_development
+  database: app_development
+  host: <%= ENV['DB_HOST'] %>
+  username: pguser
+  password: postgres
 
 test:
   <<: *default
-  database: portal_solar_test
+  database: app_test
+  host: <%= ENV['DB_HOST'] %>
