@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand font-dosis">
         <span class="navbar-item">
-          k41n3w
+          <a href="/">k41n3w</a>
         </span>
       </div>
       <div id="navbarMenu" class="navbar-menu">
@@ -14,7 +14,12 @@
               <li><a href="https://www.linkedin.com/in/k41n3w/">LinkedIn</a></li>
               <li><a href="https://k41n3w-portfolio.vercel.app/">Portfolio</a></li>
               <li><a href="https://github.com/k41n3w">Github</a></li>
-              <li><a href="/users/sign_in"><span class="tag is-primary">Cadastre-se</span></a></li>
+              <% unless user_signed_in? %>
+                <li><a href="/users/sign_in"><span class="tag is-primary">Login</span></a></li>
+              <% else %>
+                <li><a href="/users/edit"><span class="tag is-primary">Perfil</span></a></li>
+                <li><a href="/posts/new"><span class="tag">Criar Post</span></a></li>
+              <% end %>
             </ul>
           </div>
         </div>
