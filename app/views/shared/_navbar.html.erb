@@ -1,15 +1,28 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div class="container">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        k41n3w
-      </a>
- 
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+<div class="hero-head">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand font-dosis">
+        <span class="navbar-item">
+          <a href="/">k41n3w</a>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="tabs is-right">
+            <ul>
+              <li class="is-active"><a>Posts</a></li>
+              <li><a href="https://www.linkedin.com/in/k41n3w/">LinkedIn</a></li>
+              <li><a href="https://k41n3w-portfolio.vercel.app/">Portfolio</a></li>
+              <li><a href="https://github.com/k41n3w">Github</a></li>
+              <% unless user_signed_in? %>
+                <li><a href="/users/sign_in"><span class="tag is-primary">Login</span></a></li>
+              <% else %>
+                <li><a href="/users/edit"><span class="tag is-primary">Perfil</span></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
