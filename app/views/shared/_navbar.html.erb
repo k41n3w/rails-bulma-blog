@@ -14,6 +14,8 @@
               <li><a href="https://www.linkedin.com/in/k41n3w/">LinkedIn</a></li>
               <li><a href="https://k41n3w-portfolio.vercel.app/">Portfolio</a></li>
               <li><a href="https://github.com/k41n3w">Github</a></li>
+              <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'button is-light'  %>
+
               <% unless user_signed_in? %>
                 <li><a href="/users/sign_in"><span class="tag is-primary">Login</span></a></li>
               <% else %>
