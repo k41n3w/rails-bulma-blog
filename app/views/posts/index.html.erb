@@ -1,25 +1,46 @@
-</br></br>
-<h1 class="title">Publicações</h1>
-</br>
- 
-<% @posts.each do |post| %>
+
+<section class="container">
+  <section class="hero is-info is-medium is-bold">
+      <div class="hero-body">
+          <div class="container has-text-centered">
+              <h1 class="title">
+                Você também pode criar um blog como esse!
+              </h1>
+              <h2 class="subtitle p-50">
+                Neste post inaugural você encontrará instruções de como produzir e colocar no ar um blog igual este! Com ele os usuários poderão se cadastrar e, assim que um admin liberar suas permissões, poderão criar e publicar posts personalizados.
+              </h2>
+              **Post em construção**
+          </div>
+      </div>
+  </section>
+
+  <div class="box cta">
+      <p class="has-text-centered">
+        <a href="#">Você não vai evouluir e aprender se não colocar a mão na massa!</a>
+      </p>
+  </div>
+
   <div class="columns">
-    <div class="column is-four-fifths">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-full is-marginless is-3by1">
-            <%= image_tag post.featured_image %>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <a href="<%= post_path(id: post.id) %>"><p class="title is-4"><%= post.author %></p></a>
+    <% Post.last(3).each do |post| %>
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag post.featured_image %>
+            </figure>
+          </div>
+          <div class="card-image has-text-centered">
+            <i class="fa fa-paw"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= post.title %></h4>
+              <p><%= post.author[0, 50] %></p>
+              <p><a href="/posts/<%= post.id %>">Leia já!</a></p>
             </div>
           </div>
-          <p>Autor: <%= post.author %> - <%= post.created_at.strftime("%d/%m/%Y") %></p>
         </div>
       </div>
+    <% end %> 
     </div>
   </div>
-<% end %>
